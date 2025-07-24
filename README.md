@@ -90,3 +90,9 @@ GitHub: <a href="https://github.com/manmohitsingh23">manmohitsingh23</a>
 <hr>
 
 <p><strong>Enjoy your food 🍕 and code 💻!</strong></p>
+---
+
+<h2>🔒 License</h2>
+<p>This project is licensed under the <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a>.</p>
+
+---
