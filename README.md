@@ -44,7 +44,7 @@ QuickBite/
 
 <pre>
 PORT=4000
-MONGO_URI=your_mongodb_connection_string
+MONGODB_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
 AUTH_EMAIL=your_email@example.com
 AUTH_PASS=your_email_app_password
