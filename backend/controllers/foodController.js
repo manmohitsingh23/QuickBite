@@ -33,6 +33,39 @@ const listFood=async (req,res)=>{
     }
 }
 
+const listFoodByCategory = async (req, res) => {
+    try {
+        const { category } = req.query;
+        const foods = await foodModel.find({ category }); // Uses category index
+        return res.json({ success: true, data: foods });
+    } catch (error) {
+        console.log(error);
+        return res.json({ success: false, message: "Error" });
+    }
+}
+
+const listFoodSorted = async (req, res) => {
+    try {
+        const { sort = "asc" } = req.query; // default ascending
+        const foods = await foodModel.find().sort({ price: sort === "asc" ? 1 : -1 }); // Uses price index
+        return res.json({ success: true, data: foods });
+    } catch (error) {
+        console.log(error);
+        return res.json({ success: false, message: "Error" });
+    }
+}
+
+const searchFoodByName = async (req, res) => {
+    try {
+        const { keyword } = req.query;
+        const foods = await foodModel.find({ name: { $regex: keyword, $options: 'i' } }); // Uses name index if exact match
+        return res.json({ success: true, data: foods });
+    } catch (error) {
+        console.log(error);
+        return res.json({ success: false, message: "Error" });
+    }
+}
+
 //remove food item
 
 const removeFood=async(req,res)=>{
